@@ -6,13 +6,13 @@ vector<int> parent, sz;
 int findSet(int v) {
     // TODO: implement path compression
     if (parent[v] == v) return v;
-    return parent[v] = findset(parent[v]);
+    return parent[v] = findSet(parent[v]);
 }
 
 void unionSet(int a, int b) {
     // TODO: implement union by size/rank(size entekhab shod)
-    a = findset(a);
-    b = findset(b);
+    a = findSet(a);
+    b = findSet(b);
     if (a !=b){
         if (sz[a] < sz[b]) swap(a,b);
         parent[b] = a;
